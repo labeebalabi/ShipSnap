@@ -1,0 +1,78 @@
+{% extends 'navbar.html'%}
+{% block content %}
+{% load static %}
+
+
+
+
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+
+    <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+            <!-- <h2>Contact</h2> -->
+            <!-- <p>shipping data</p> -->
+        </header>
+
+        <div class="row gy-4">
+            <div class="col-lg-12 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{% static 'img/prueba-maximo.webp' %}" class="img-fluid" alt="">
+                <br>
+            </div>
+
+
+
+
+            <div class="col-lg-12">
+
+                <p>
+                <h2 class="text-primary">My Shipping Bookings</h2>
+                </p>
+               
+          
+                <ul class="team " >
+                    {%for i in order%}
+                        <li class="border border-primary shadow mb-3 p-4" type="none" >
+                                
+                            <p class="text-decondary"> from details : {{i.ship.fr_name}}</p>
+                                <p class="text-secondary"> {{i.ship.fr_district}}</p>
+                                <p class="text-secondary"> to details : {{i.ship.to_name}}</p>
+                                <p class="text-secondary"> {{i.ship.to_district}}</p>
+                                <p class="text-secondary"> {{i.ship.product.price}}</p>
+                                <p class="text-warning"> {{i.Status}}</p>
+
+
+
+
+                                
+
+                                <a href="{% url 'delete' i.id %}" class="btn btn-danger">Delete</a>
+                
+                            
+                        </li>
+                  
+                    {%endfor%}
+                </ul>
+            
+                <!-- Add more fields as needed -->
+         
+
+                <!-- <span class="text-primary shadow fs-3">{{object.price}} amout payyable</span> -->
+               
+            </div>
+        </div>
+
+    </div>
+
+</section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+
+
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+{% endblock content %}

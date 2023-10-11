@@ -1,0 +1,121 @@
+{% extends 'navbar.html'%}
+{% block content %}
+{% load static %}
+
+ 
+           
+                
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <!-- <h2>Contact</h2> -->
+          <!-- <p>shipping data</p> -->
+        </header>
+
+        <div class="row gy-4">
+          <div class="col-lg-12 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="{% static 'img/prueba-maximo.webp' %}" class="img-fluid" alt="">
+            <br>
+          </div>
+
+
+
+
+          <div class="col-lg-12">
+              <form action=""  method="post"  class="php-email-form" class="form-control">
+                {%csrf_token%}
+                <div class="row gy-4">
+                    <p><h2 class="text-primary">Shipping details</h2></p>
+
+                    <!-- <span class="text-primary shadow fs-3">{{object.price}} amout payyable</span> -->
+                      
+                 <div class="col-6 " style="background-color: beige;">
+                    <p><h4>From Address</h4></p>
+                    <div class="col-md-12 form-group">
+                      {{ form.fr_name.label_tag }}
+                        {{form.fr_name}}
+                      </div><br>
+                      <div class="col-md-12 ">
+                        {{ form.fr_phone.label_tag }}
+                             {{form.fr_phone}}
+                      </div><br>
+                      <div class="col-md-12">
+                            {{ form.fr_landmark.label_tag }}
+
+                             {{form.fr_landmark}}
+                      </div><br>
+                      <div class="col-md-12">
+                        {{ form.fr_district.label_tag }}
+
+                        {{form.fr_district}}                        
+                 </div><br>
+                      <div class="col-md-12">
+                        {{ form.fr_addrss.label_tag }}
+
+                             {{form.fr_addrss}}
+                    </div>
+                 </div>
+                 <div class="col-6" style="background-color: rgb(220, 245, 241);">
+                    <p><h4>To Address</h4></p>
+                    
+              
+                    <div class="col-md-12 ">
+                    {{ form.to_name.label_tag }}
+
+                        {{form.to_name}}
+                      </div><br>
+                      <div class="col-md-12 ">
+                      {{ form.to_phone.label_tag }}
+
+                             {{form.to_phone}}
+                      </div><br>
+                      <div class="col-md-12 ">
+                      {{ form.to_landmark.label_tag }}
+
+                             {{form.to_landmark}}
+                      </div><br>
+
+                
+                      <div class="col-md-12 ">
+                      {{ form.to_district.label_tag }}
+
+                             {{form.to_district}}                        
+                      </div><br>
+    
+                      <div class="col-md-12 ">
+                      {{ form.to_addrss.label_tag }}
+
+                             {{form.to_addrss}}
+                    </div>
+               </div>
+
+                  <div class="col-md-12  text-center">
+                    <div class="loading">Loading</div>
+                    <div class="error-message"></div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                    <button type="submit">submit </button>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+  
+      </section><!-- End Contact Section -->
+  
+    </main><!-- End #main -->
+  
+  
+    
+  
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+   {% endblock content %}
+

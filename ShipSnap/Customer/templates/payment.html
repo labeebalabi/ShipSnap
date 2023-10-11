@@ -1,0 +1,85 @@
+{% extends 'navbar.html'%}
+{% block content %}
+{% load static %}
+
+ 
+           
+                
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <!-- <h2>Contact</h2> -->
+          <!-- <p>Personal Details</p> -->
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-12 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+           
+            <img src="{% static 'img/aa.jpg' %}" class="img-fluid" alt="">
+            <!-- <img src="{% static 'img/R.jpeg' %}" class="img-fluid" alt=""> -->
+          </div>
+
+
+          <div class="col-lg-12">
+            <form action="" method="post">
+                {%csrf_token%}
+               
+                    <div class="form-group">
+                      <label for="name">Name :</label>
+                      <input type="text" readonly value="{{object.fr_name}}" class="form-control" id="name">
+                    </div> <br>
+                    <div class="form-group">
+                      <label for="phone">Phone number:</label>
+                      <input type="number" class="form-control" id="phone" value="{{object.fr_phone}}" readonly>
+                    </div> <br>
+                    <div class="form-group">
+                        </div> <br>
+                      <div class="form-group">
+                        <label for="card">Card Number</label>
+                        <input type="number" class="form-control" id="card" placeholder="xxxx xxxx xxxx xxxx" required>
+
+                      </div> <br>
+                      
+                      <div class="form-group row">
+                        <div class="w-25">
+                            <label for="cvv">CVV:</label>
+                            <input type="password" maxlength="3" class="form-control" id="cvv" placeholder="xxx" required>
+                        </div> 
+                        <div class="w-25">
+                            <label for="exp">Exp date:</label>
+                            <input type="date" class="form-control" id="exp" placeholder="mm/yy" required>
+                        </div> 
+                        <div class="w-25">
+                            <label for="price">Amount :</label>
+                        <input type="text" readonly value="{{object.product.price}}" class="form-control" id="price">
+                      </div>
+                      </div> <br>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </form>
+
+            
+
+          </div>
+         
+
+
+        </div>
+
+      </div>
+
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+
+  
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+ {% endblock content %}
